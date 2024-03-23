@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { cn } from "../lib/utils";
 import { NAV_LINKS } from "../constants";
-import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -18,15 +17,6 @@ const Navbar = () => {
       } else {
         setIsSticky(false);
       }
-    };
-
-    const currentUrl = () => {
-      const router = useRouter();
-      const { asPath } = router;
-
-      const url = asPath.split("#")[1];
-
-      console.log(url);
     };
 
     window.addEventListener("scroll", handleScroll);

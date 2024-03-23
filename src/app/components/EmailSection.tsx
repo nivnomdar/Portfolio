@@ -57,12 +57,12 @@ const EmailSection = () => {
       className="grid md:grid-cols-2 my-12 md:my-12 py-10 gap-4 relative mx-6">
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
-          Let's work together!
+          Let&apos;s work together!
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I'm currently looking for new opportunities, my inbox is always open.
-          Whether you have a question or just want to say hi, I'll get back to
-          you!
+          I&apos;m currently looking for new opportunities, my inbox is always
+          open. Whether you have a question or just want to say hi, I&apos;ll
+          get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
           <LinkedInIcon

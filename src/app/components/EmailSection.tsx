@@ -9,7 +9,11 @@ import { useState } from "react";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
-
+  const [formData, setFormData] = useState({
+    email: "",
+    subject: "",
+    message: "",
+  });
   const handleSubmit = async (e: any) => {
     console.log("submitted");
     e.preventDefault();
@@ -20,7 +24,7 @@ const EmailSection = () => {
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-    console.log("Data: ", data);
+    // console.log("Data: ", data);
 
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
@@ -42,13 +46,25 @@ const EmailSection = () => {
 
     if (response.status === 200) {
       setSending(false);
-      toast.success("Message sent!");
-      console.log("Message sent!");
       setEmailSubmitted(true);
+      toast.success("Message sent, Thank you!");
+
+      setFormData({
+        email: "",
+        subject: "",
+        message: "",
+      });
     } else {
       toast.error("Something went wrong! Please try again.");
-      console.log("Something went wrong");
     }
+  };
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   return (
@@ -101,6 +117,8 @@ const EmailSection = () => {
               type="email"
               id="email"
               required
+              value={formData.email}
+              onChange={handleChange}
               placeholder="email123@gmail.com"
               className="bg-[#18191E] border border-orange-500 placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
             />
@@ -116,6 +134,8 @@ const EmailSection = () => {
               type="text"
               id="subject"
               required
+              value={formData.subject}
+              onChange={handleChange}
               placeholder="Just saying hi"
               className="bg-[#18191E] border border-orange-500 placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
             />
@@ -129,6 +149,8 @@ const EmailSection = () => {
             <textarea
               name="message"
               id="message"
+              value={formData.message}
+              onChange={handleChange}
               className="bg-[#18191E] border border-orange-500 placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Let's talk about..."
             />

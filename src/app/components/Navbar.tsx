@@ -71,7 +71,7 @@ const Navbar = () => {
               className={cn(
                 `flex text-center mr-2 px-2 py-1
                font-medium cursor-pointer hover:text-black hover:bg-orange-400
-             text-black bg-orange-300 rounded-full transition-all`
+               text-orange-500 bg-[#AB] rounded-full transition-all border-[1px] border-orange-500`
               )}>
               <div className="flex items-center py-1">
                 <link.icon className={cn("h-5 w-5")} />

@@ -11,7 +11,7 @@ const projectsData = [
     description:
       "Create convertion, image, video, code and music using ai tools.",
     image: "/images/projects/Dashboard-Nif-ai.png",
-    tag: ["All", "Next.js", "Vercel"],
+    tag: ["All", "Next.js"],
     gitUrl: "https://github.com/nivnomdar/Nif-ai",
   },
   {
@@ -19,7 +19,7 @@ const projectsData = [
     title: "Spotify Web",
     description: "Listen to music and choose your favorite songs.",
     image: "/images/projects/Dashboard-Nif-Spotify.png",
-    tag: ["All", "Next.js", "Vercel"],
+    tag: ["All", "Next.js"],
     gitUrl: "https://github.com/nivnomdar/Nif-Spotify",
   },
   {
@@ -28,7 +28,7 @@ const projectsData = [
     description:
       "Search for movies or tvshows, see their information and add to your favorites.",
     image: "/images/projects/Dashboard-MoviesTvShows.png",
-    tag: ["All", "React", "Vercel"],
+    tag: ["All", "React"],
     gitUrl: "https://github.com/nivnomdar/Nif-MoviesTvShows-App",
   },
   {
@@ -37,7 +37,7 @@ const projectsData = [
     description:
       "Search Videogames, see their information and add to your favorites.",
     image: "/images/projects/Dashboard-VideoGames.png",
-    tag: ["All", "React", "Vercel"],
+    tag: ["All", "React"],
     gitUrl: "https://github.com/nivnomdar/Nif-GamesWeb",
   },
   {
@@ -92,7 +92,7 @@ const ProjectsSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-start gap-2 py-6">
+      <div className="text-white flex flex-row justify-center items-start gap-2 py-6 sm:w-full">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
@@ -112,11 +112,6 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="html-css-js"
           isSelected={tag === "html-css-js"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Vercel"
-          isSelected={tag === "Vercel"}
         />
       </div>
       <div className="grid md:grid-cols-2 gap-8 md:gap-12 mx-5">

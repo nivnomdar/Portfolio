@@ -17,7 +17,7 @@ const HeroSection = () => {
 
   return (
     <section id="heroSection">
-      <div className="grid grid-cols-1 sm:grid-cols-12 my-12 mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-12 my-4 lg:my-[90px]">
         <div className="col-span-8 place-self-center text-center sm:text-left">
           <h1 className="text-white mb-4 text-4xl place-self-center sm:text-5xl lg:text-6xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-800">
